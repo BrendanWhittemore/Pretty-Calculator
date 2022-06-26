@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Pretty Calculator
  *
@@ -10,7 +12,35 @@
  */
 
  public class PrettyCalculator {
+
+  // This is the main method that begins the program and contains the high-level logic
   public static void main(String[] args) {
-    System.out.println("Hello World");
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Welcome to Pretty Calculator!\n");
+    
+    System.out.println(getOption(scanner));
   }
- }
+
+  // This method returns the chosen calculator operation
+  public static String getOption(Scanner scanner) {
+    String option;
+  
+    System.out.println("Option Menu");
+    System.out.println("Add");
+    System.out.println("Subtract");
+    System.out.println("Divide");
+    System.out.println("Multiply");
+    System.out.print("Enter your choice: ");
+
+    do {
+      option = scanner.nextLine();
+      
+      if (option == null || option.isBlank()) {
+        System.out.println("Invalid input, please try again");
+      }
+    } while (option == null || option.isBlank());
+
+    return option;
+  }
+}
