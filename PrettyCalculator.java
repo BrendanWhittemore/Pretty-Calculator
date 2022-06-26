@@ -24,23 +24,38 @@ import java.util.*;
 
   // This method returns the chosen calculator operation
   public static String getOption(Scanner scanner) {
-    String option;
+    String choice;
+    ArrayList<String> options = new ArrayList<>(Arrays.asList("Add", "Subtract", "Divide", "Multiply"));
   
     System.out.println("Option Menu");
-    System.out.println("Add");
-    System.out.println("Subtract");
-    System.out.println("Divide");
-    System.out.println("Multiply");
-    System.out.print("Enter your choice: ");
+
+    for (String option : options) {
+      System.out.println(option);
+    }
 
     do {
-      option = scanner.nextLine();
+      System.out.print("Enter your choice: ");
+
+      choice = toTitleCase(scanner.nextLine());
       
-      if (option == null || option.isBlank()) {
+      if (choice == null || choice.isBlank() || !options.contains(choice)) {
         System.out.println("Invalid input, please try again");
       }
-    } while (option == null || option.isBlank());
+    } while (choice == null || choice.isBlank() || !options.contains(choice));
 
-    return option;
+    return choice;
+  }
+
+  // This method capitalizes the first letter of a single word
+  public static String toTitleCase(String original) {
+    String titleCased;
+
+    if (original.length() >= 2) {
+      titleCased = original.substring(0, 1).toUpperCase() + original.substring(1);
+    } else {
+      titleCased = original;
+    }
+
+    return titleCased;
   }
 }
