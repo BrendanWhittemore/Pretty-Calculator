@@ -52,7 +52,7 @@ import java.util.*;
   }
 
   // This method capitalizes the first letter of a single word
-  public static String toTitleCase(String original) {
+  private static String toTitleCase(String original) {
     String titleCased;
 
     if (original.length() >= 2) {
@@ -77,7 +77,7 @@ import java.util.*;
   }
 
   // Add the numbers
-  public static void add(Scanner scanner) {
+  private static void add(Scanner scanner) {
     int[] nums;
     int result;
 
@@ -88,7 +88,7 @@ import java.util.*;
   }
 
   // Subtract the numbers
-  public static void subtract(Scanner scanner) {
+  private static void subtract(Scanner scanner) {
     int[] nums;
     int result;
 
@@ -99,7 +99,7 @@ import java.util.*;
   }
 
   // Multiply the numbers
-  public static void multiply(Scanner scanner) {
+  private static void multiply(Scanner scanner) {
     int[] nums;
     int result;
 
@@ -110,7 +110,7 @@ import java.util.*;
   }
 
   // Divide the numbers
-  public static void divide(Scanner scanner) {
+  private static void divide(Scanner scanner) {
     int[] nums;
     int result;
 
