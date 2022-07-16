@@ -19,15 +19,20 @@ import java.util.*;
 
     System.out.println("Welcome to Pretty Calculator!\n");
     
-    System.out.println(getOption(scanner));
+    switch (getOption(scanner)) {
+      case "Add" -> add(scanner);
+      case "Subtract" -> subtract(scanner);
+      case "Multiply" -> multiply(scanner);
+      case "Divide" -> divide(scanner);
+    }
   }
 
   // This method returns the chosen calculator operation
-  public static String getOption(Scanner scanner) {
+  private static String getOption(Scanner scanner) {
     String choice;
     ArrayList<String> options = new ArrayList<>(Arrays.asList("Add", "Subtract", "Divide", "Multiply"));
   
-    System.out.println("Option Menu");
+    System.out.println("Option Menu:");
 
     for (String option : options) {
       System.out.println(option);
@@ -57,5 +62,61 @@ import java.util.*;
     }
 
     return titleCased;
+  }
+
+  // Recieve numerical input from user
+  private static int[] getNums(Scanner scanner) {
+    int[] nums = new int[2];
+
+    System.out.print("First number: ");
+    nums[0] = scanner.nextInt();
+    System.out.print("Second number: ");
+    nums[1] = scanner.nextInt();
+
+    return nums;
+  }
+
+  // Add the numbers
+  public static void add(Scanner scanner) {
+    int[] nums;
+    int result;
+
+    nums = getNums(scanner);
+    result = nums[0] + nums[1];
+
+    System.out.printf("Result: %d\n", result);
+  }
+
+  // Subtract the numbers
+  public static void subtract(Scanner scanner) {
+    int[] nums;
+    int result;
+
+    nums = getNums(scanner);
+    result = nums[0] - nums[1];
+
+    System.out.printf("Result: %d\n", result);
+  }
+
+  // Multiply the numbers
+  public static void multiply(Scanner scanner) {
+    int[] nums;
+    int result;
+
+    nums = getNums(scanner);
+    result = nums[0] * nums[1];
+
+    System.out.printf("Result: %d\n", result);
+  }
+
+  // Divide the numbers
+  public static void divide(Scanner scanner) {
+    int[] nums;
+    int result;
+
+    nums = getNums(scanner);
+    result = nums[0] / nums[1];
+
+    System.out.printf("Result: %d\n", result);
   }
 }
