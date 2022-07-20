@@ -11,14 +11,17 @@ import java.util.*;
  *
  */
 
- public class PrettyCalculator {
+public class PrettyCalculator {
 
-  // This is the main method that begins the program and contains the high-level logic
+  /*
+   * This is the main method that begins the program and contains the high-level
+   * logic
+   */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("Welcome to Pretty Calculator!\n");
-    
+
     switch (getOption(scanner)) {
       case "Add" -> add(scanner);
       case "Subtract" -> subtract(scanner);
@@ -31,7 +34,7 @@ import java.util.*;
   private static String getOption(Scanner scanner) {
     String choice;
     ArrayList<String> options = new ArrayList<>(Arrays.asList("Add", "Subtract", "Divide", "Multiply"));
-  
+
     System.out.println("Option Menu:");
 
     for (String option : options) {
@@ -42,7 +45,7 @@ import java.util.*;
       System.out.print("Enter your choice: ");
 
       choice = toTitleCase(scanner.nextLine());
-      
+
       if (choice == null || choice.isBlank() || !options.contains(choice)) {
         System.out.println("Invalid input, please try again");
       }
