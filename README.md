@@ -1,2 +1,3 @@
-# Pretty-Calculator
-Project exploring complex GUIs within Java with a simple calculator
+# Pretty Calculator
+
+This project exploring complex GUIs within Java with a simple calculator.
